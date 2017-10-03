@@ -1,0 +1,28 @@
+// app.scss
+
+// Define desired color palettes.
+$primary: "red";
+$accent: "red";
+$warn: "pink";
+
+// If desired, import the palettes and modify to your liking.
+@import "color-palette";
+
+// Import the rest of ember-paper.
+@import "ember-paper";
+
+
+
+.page{
+    background-color: #212121;
+    height:100vh;
+}
+
+a.md-tab{
+    color: #eee !important
+}
+
+a.md-active{
+    color: #fff !important;
+    background-color: lighten(#f44336, 5) !important;
+}
