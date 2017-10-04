@@ -1,0 +1,63 @@
+<div class="page">
+    <div class="layout-row layout-xs-column justify-center">
+        <div class="layout-column flex-xs flex-gt-xs-70 full-page">
+            
+                
+                    <div class="layout-row flex">
+                        <div class="flex-gt-xs-15 left-tab">
+                            <img src="assets/images/logo@4x.png" class="fit-image">
+                            {{!--{{#if (eq model.routeName "app.home")}}WOAHH{{/if}}--}}
+                            {{#paper-button class=(if (eq selectedRoute 'app.home') 'tab-button md-focused' 'tab-button') primary=true value="app.home" href=(href-to "app.home") onClick=(action "selectRoute" "app.home")}}
+                                Home
+                            {{/paper-button}}
+                            {{#paper-button class=(if (eq selectedRoute 'app.play') 'tab-button md-focused' 'tab-button') primary=true value="app.play" href=(href-to "app.play") onClick=(action "selectRoute" "app.play")}}
+                                Play
+                            {{/paper-button}}
+                            {{#paper-button class=(if (eq selectedRoute 'app.blog') 'tab-button md-focused' 'tab-button') primary=true value="app.blog" href=(href-to "app.blog") onClick=(action "selectRoute" "app.blog")}}
+                                Blog
+                            {{/paper-button}}
+                            {{#paper-button class=(if (eq selectedRoute 'app.team') 'tab-button md-focused' 'tab-button') primary=true value="app.team" href=(href-to "app.team") onClick=(action "selectRoute" "app.team")}}
+                                Team
+                            {{/paper-button}}
+                            {{#paper-button class=(if (eq selectedRoute 'app.about') 'tab-button md-focused' 'tab-button') primary=true value="app.about" href=(href-to "app.about") onClick=(action "selectRoute" "app.about")}}
+                                About
+                            {{/paper-button}}
+                            
+                        </div>
+
+                        <div class="flex-gt-xs-85 content-background">
+                            {{liquid-outlet class="md-padding"}}
+                        
+                        </div>
+                </div>
+                
+                    
+                
+        </div>
+    </div>
+</div>
+
+{{!--
+{{#paper-tabs
+primary=true
+accent=true
+stretch=stretch
+borderBottom=borderBottom
+selected=selectedRoute
+onChange=(action (mut selectedBasicTab)) as |tabs|}}
+{{#tabs.tab value="app.home" href=(href-to "app.home")}}
+    Home
+{{/tabs.tab}}
+{{#tabs.tab value="app.play" href=(href-to "app.play")}}
+    Play
+{{/tabs.tab}}
+{{#tabs.tab value="app.blog" href=(href-to "app.blog")}}
+    Blog
+{{/tabs.tab}}
+{{#tabs.tab value="app.team" href=(href-to "app.team")}}
+    Team
+{{/tabs.tab}}
+{{#tabs.tab value="app.about" href=(href-to "app.about")    }}
+    About
+{{/tabs.tab}}
+{{/paper-tabs}}--}}
