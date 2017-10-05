@@ -75,7 +75,7 @@
                                 <h3 class="lessmargin">About Me</h3>
                                     {{profile.aboutme}}
                             {{else}}
-                                {{year-graph currentyear=profile.currentyear years=profile.years maxyear=profile.maxyear}}
+                                {{year-graph currentyear=profile.currentyear years=profile.years maxyear=profile.maxyear yearTitle=profile.yearTitle}}
                                 <div class="layout-row layout-wrap graphs">
                                     <div class="flex-10">
                                         {{coffee-slider step=profile.coffee min=0 max=4}}    
