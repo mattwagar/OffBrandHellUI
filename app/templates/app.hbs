@@ -1,42 +1,50 @@
-<div class="page">
-    <div class="layout-row layout-xs-column justify-center">
-        <div class="layout-column flex-xs flex-gt-xs-70 full-page">
+
+<div class="layout-row layout-xs-column justify-center">
+    <div class="layout-column flex-xs flex-gt-xs-75 full-page">
+        
+            
+                <div class="layout-row flex">
+                    <div class="flex-gt-xs-10 left-tab">
+                        <div class="logo-section">
+                            <a href={{href-to "app.home"}} onClick={{action "selectRoute" "app.home"}}>
+                            <img src="assets/images/logo@4x.png" class="fit-image">
+                            </a>
+                            <div class="md-headline logo-head">Off Brand Hell</div>
+                            {{!--<div class="md-subhead logo-subhead">A Game Company</div>--}}
+                        </div>
+                        <div class="nav-section">
+                        {{#paper-button class=(if (eq selectedRoute 'app.home') 'tab-button md-focused' 'tab-button') primary=true value="app.home" href=(href-to "app.home") onClick=(action "selectRoute" "app.home")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Home</b>
+                        {{/paper-button}}
+                        {{#paper-button class=(if (eq selectedRoute 'app.play') 'tab-button md-focused' 'tab-button') primary=true value="app.play" href=(href-to "app.play") onClick=(action "selectRoute" "app.play")}}
+                            {{!--{{paper-icon "videogame asset" size=48}}--}}
+                            <b>Play</b>
+                        {{/paper-button}}
+                        {{#paper-button class=(if (eq selectedRoute 'app.blog') 'tab-button md-focused' 'tab-button') primary=true value="app.blog" href=(href-to "app.blog") onClick=(action "selectRoute" "app.blog")}}
+                            {{!--{{paper-icon "message" size=48}}--}}
+                            <b>Blog</b>
+                        {{/paper-button}}
+                        {{#paper-button class=(if (eq selectedRoute 'app.team') 'tab-button md-focused' 'tab-button') primary=true value="app.team" href=(href-to "app.team") onClick=(action "selectRoute" "app.team")}}
+                            {{!--{{paper-icon "web" size=48}}--}}
+                            <b>Team</b>
+                        {{/paper-button}}
+                        {{#paper-button class=(if (eq selectedRoute 'app.about') 'tab-button md-focused' 'tab-button') primary=true value="app.about" href=(href-to "app.about") onClick=(action "selectRoute" "app.about")}}
+                            <b>About</b>
+                        {{/paper-button}}
+                        </div>
+                        
+                    </div>
+
+                    <div id="content" class="flex-gt-xs-90 content-background route-content">
+                        {{liquid-outlet class="md-padding"}}
+                    </div>
+            </div>
             
                 
-                    <div class="layout-row flex">
-                        <div class="flex-gt-xs-15 left-tab">
-                            <img src="assets/images/logo@4x.png" class="fit-image">
-                            {{!--{{#if (eq model.routeName "app.home")}}WOAHH{{/if}}--}}
-                            {{#paper-button class=(if (eq selectedRoute 'app.home') 'tab-button md-focused' 'tab-button') primary=true value="app.home" href=(href-to "app.home") onClick=(action "selectRoute" "app.home")}}
-                                Home
-                            {{/paper-button}}
-                            {{#paper-button class=(if (eq selectedRoute 'app.play') 'tab-button md-focused' 'tab-button') primary=true value="app.play" href=(href-to "app.play") onClick=(action "selectRoute" "app.play")}}
-                                Play
-                            {{/paper-button}}
-                            {{#paper-button class=(if (eq selectedRoute 'app.blog') 'tab-button md-focused' 'tab-button') primary=true value="app.blog" href=(href-to "app.blog") onClick=(action "selectRoute" "app.blog")}}
-                                Blog
-                            {{/paper-button}}
-                            {{#paper-button class=(if (eq selectedRoute 'app.team') 'tab-button md-focused' 'tab-button') primary=true value="app.team" href=(href-to "app.team") onClick=(action "selectRoute" "app.team")}}
-                                Team
-                            {{/paper-button}}
-                            {{#paper-button class=(if (eq selectedRoute 'app.about') 'tab-button md-focused' 'tab-button') primary=true value="app.about" href=(href-to "app.about") onClick=(action "selectRoute" "app.about")}}
-                                About
-                            {{/paper-button}}
-                            
-                        </div>
-
-                        <div class="flex-gt-xs-85 content-background">
-                            {{liquid-outlet class="md-padding"}}
-                        
-                        </div>
-                </div>
-                
-                    
-                
-        </div>
+            
     </div>
 </div>
-
 {{!--
 {{#paper-tabs
 primary=true

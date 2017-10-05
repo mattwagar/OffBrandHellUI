@@ -1,1 +1,92 @@
-<div>team</div>
+
+    
+
+    <div id="route-header">The Team</div>
+
+    {{#paper-grid-list
+        cols="1 md-2 gt-md-5"
+        rowHeight="gt-md-1:1 2:2"
+        gutter="12px gt-sm-16px" as |grid|}}
+
+        {{#each profiles as |profile|}}
+            {{#grid.tile class=profile.color as |tile|}}
+            {{#paper-button id=profile.id class="profile-button" onClick=(action "openDialog" profile) raised=false}}
+
+            {{/paper-button}}
+            <img src={{profile.pic}} class="fit-image">
+            {{#tile.footer}}
+                <div class="layout-row flex">
+                    <div class="flex-initial icon-padding">{{paper-icon profile.icon class="white" size=36}}</div>
+                    <div class="layout-column flex">
+                        <div class="flex"><h3>{{profile.name}}</h3></div>
+                        <div class="flex"><h4>{{profile.role}}</h4></div>
+                    </div>
+                </div>
+            {{/tile.footer}}
+            
+            {{/grid.tile}}
+
+            {{#if profile.showDialog}}
+                {{#paper-dialog class="flex-25 no-overflow" onClose=(action "closeDialog" profile) parent='#content' origin=(concat '#' profile.id) clickOutsideToClose=true}}
+                    {{#paper-toolbar class="profile-toolbar"}}
+                        <div class="profile-background {{profile.color}}"></div>
+                        {{#paper-toolbar-tools}}
+
+                        <div class="hidden">
+                            {{#paper-button iconButton=true onClick=(action "closeDialog" profile)}}{{paper-icon icon="close"}}{{/paper-button}}
+                        </div>  
+                        
+                        <div class="profile-name">
+                            <img src={{profile.pic}} class="circular-square">
+                            <img >
+                            <h2>{{profile.name}}</h2>
+                            <h3>{{profile.role}}</h3>
+                        </div>   
+
+                        <div>
+                            {{#paper-button iconButton=true onClick=(action "closeDialog" profile)}}{{paper-icon icon="close"}}{{/paper-button}}
+                        </div>   
+
+                        
+
+                                         
+                        
+                        {{/paper-toolbar-tools}}
+                    {{/paper-toolbar}}
+                    {{#paper-tabs primary=true
+                            borderBottom=true
+                            stretch=true
+                            selected=selectedProfileTab
+                            onChange=(action (mut selectedProfileTab)) as |tabs|}}
+                                {{#tabs.tab value="aboutme"}}
+                                About Me
+                                {{/tabs.tab}}
+
+                                {{#tabs.tab value="stats"}}
+                                Skill
+                                {{/tabs.tab}}
+                            
+                            {{/paper-tabs}}
+                            {{#paper-dialog-content class="no-padding"}}
+                            <div id="liquid-profile">
+                            {{#liquid-if (eq selectedProfileTab "aboutme") class="md-padding dynamic-animation" as |current|}}
+                                <h3>My Role</h3>
+                                    {{profile.myrole}}
+                                <h3>About Me</h3>
+                                    {{profile.aboutme}}
+                            {{else}}
+                                {{year-graph currentyear=profile.currentyear years=profile.years maxyear=profile.maxyear}}
+                                <div class="layout-row">
+                                    <div class="flex-20"></div> 
+                                    <div class="flex-80">
+                                        {{pentagon-graph programSkill=profile.programSkill artSkill=profile.artSkill leadSkill=profile.leadSkill comSkill=profile.comSkill orgSkill=profile.orgSkill }}
+                                    </div>
+                                </div>
+                            {{/liquid-if}}
+                            </div>
+                            {{/paper-dialog-content}}
+                    
+                {{/paper-dialog}}
+            {{/if}}
+        {{/each}}
+    {{/paper-grid-list}}

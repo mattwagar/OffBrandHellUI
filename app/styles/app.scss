@@ -1,8 +1,9 @@
 // app.scss
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 // Define desired color palettes.
 $primary: "red";
-$accent: "red";
+$accent: "deep-purple";
 $warn: "pink";
 
 // If desired, import the palettes and modify to your liking.
@@ -11,47 +12,53 @@ $warn: "pink";
 // Import the rest of ember-paper.
 @import "ember-paper";
 
+@font-face {
+    font-family: Colourbars;
+    src: url(colourbars.bold.ttf)
+}
 
-
-.page{
-    background-color: #101010;
-    height:100vh;
+body {
+  background-color: #101010;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 .full-page{
     height: 100vh;
 }
 
-a.md-tab{
-    color: #eee !important
+.white{
+    color: white !important;
 }
 
-a.md-active{
-    color: #fff !important;
-    background-color: lighten(#f44336, 7) !important;
-}
+// a.md-active{
+//         color: #fff !important;
+//     background-color: #EF5350 !important;
+// }
 
-a.md-focused{
-    color: #fff !important;
-    background-color: lighten(#f44336, 7) !important;
-}
+// a.md-focused{
+//         color: #fff !important;
+//     background-color: #EF5350 !important;
+// }
 
 .justify-center{
     justify-content: center;
 }
 
 .left-tab{
-    background-color: #444;
+    background-color: #212121;
     box-shadow: 0px 0px 5px black;
     z-index:5;
 }
 
 .tab-button{
     margin:0;
-    height:30px;
-    line-height: 35px;
+    height:45px;
+    line-height: 45px;
     letter-spacing:4px;
     width:100%;
+
+    color: #EF5350 !important
+    
 }
 
 .align-end{
@@ -61,10 +68,182 @@ a.md-focused{
 .fit-image{
     width: 100%;
     box-sizing: border-box;
-    padding: 15px;
+    
+}
+
+.logo-section{
+    background-color: #777;
+    padding: 10px;
 }
 
 .content-background{
-    background-color:#aaa;
+    background-color:#bbb;
 }
 
+.logo-head{
+    text-align: center;
+    font-size: 1.2vw;;
+    font-family: Colourbars;
+}
+
+.logo-subhead{
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav-section{
+    padding: 2vw 0vw;
+}
+
+.inline-block{
+    display:inline-block;
+    height:100%;
+}
+
+.profile-button{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.icon-padding{
+    padding-left: 5px;
+}
+
+.route-content{
+    padding: 16px;
+}
+
+.purple{
+    background-color: #B39DDB;
+}
+
+.blue{
+    background-color: #90caf9;
+}
+
+.profile-name{
+
+    width: 100%;
+    text-align: center;
+
+    h2{
+        font-size: 1em;
+    }
+
+    h3{
+        font-size: 0.75em;
+    }
+
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.profile-toolbar{
+    height: 175px;
+}
+
+.circular-square {
+    width: 40%;
+  border-radius: 50%;
+}
+
+.no-overflow{
+    overflow:visible;
+}
+
+.profile-background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+}
+
+#route-header{
+    font-weight: bold;
+    font-size:1.5em;
+    padding: 1em 0em;
+}
+
+.no-padding{
+    padding: 0 !important;
+}
+
+// .float-right{
+//     float:right;
+// }
+
+// .block{
+//     display:block;
+// }
+
+
+/* People's colors*/
+
+.mwagar-color{
+    background: linear-gradient(135deg, #330033 0%, purple 100%);
+}
+
+
+/*******************/
+
+/*year-graph component*/
+.year-wrapper{
+    margin: 0px -5px;
+}
+.year-container{
+    padding: 0px 5px;
+}
+.year{
+    height: 10px;
+    width:100%;
+    
+}
+
+.year-fill{
+    background: linear-gradient(135deg, #2cb0e0 1%,#2cccdd 100%);
+    box-shadow:         0 0 5px #2cb0e0;
+}
+
+.year-nofill{
+    background: linear-gradient(135deg, #2cb0e0 1%,#2cccdd 100%);
+    opacity: 0.5;
+}
+
+/******/
+
+/*pentagon-graph component*/
+
+.pentagon{
+    // fill:none;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+/****/
+
+.svg-tooltip{
+    stroke: none;
+    fill:transparent;
+}
+
+.tooltip{
+    font-size: 0.75em;
+    padding: 5px;
+    height: auto;
+    text-align: center;
+    z-index: 1000;
+}
+
+.tooltip-title{
+    font-size: 1.5em;
+    padding: 5px;
+}
