@@ -11,10 +11,10 @@ Router.map(function() {
     path: '/'
   }, function() {
     this.route('about');
-    this.route('team');
-    this.route('blog');
-    this.route('play');
-    this.route('home');
+    this.route('team' );
+    this.route('blog' );
+    this.route('play' );
+    this.route('home' );
   });
 });
 
