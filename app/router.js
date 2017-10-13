@@ -15,6 +15,7 @@ Router.map(function() {
     this.route('blog' );
     this.route('play' );
     this.route('home' );
+    this.route('documentation');
   });
 });
 

@@ -1,0 +1,27 @@
+<div id="route-header">Documentation</div>
+
+{{#paper-card  class="doc-card" as |card|}}
+{{#paper-tabs primary=true
+    borderBottom=true
+    stretch=true
+    selected=selectedDoc
+    onChange=(action (mut selectedDoc)) as |tabs|}}
+        {{#tabs.tab value="gdd"}}
+        <b>Game Design Document</b>
+        {{/tabs.tab}}
+
+        {{#tabs.tab value="gantt"}}
+        <b>Gantt Chart</b>
+        {{/tabs.tab}}
+{{/paper-tabs}}
+
+{{#liquid-if (eq selectedDoc "gdd") class="md-padding dynamic-animation doc-container" as |current|}}
+    {{google-doc}} 
+{{else}}
+    {{gantt-chart}}
+{{/liquid-if}}
+
+{{/paper-card}}
+
+
+{{!--{{google-doc}}--}}

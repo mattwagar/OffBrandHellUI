@@ -22,11 +22,13 @@ body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
+  z-index:-100;
 }
 
 .full-page{
     height: 100vh;
 }
+
 
 .white{
     color: white !important;
@@ -193,7 +195,7 @@ body {
 #route-header{
     font-weight: bold;
     font-size:1.5em;
-    padding: 1em 0em;
+    padding-bottom:32px;
 }
 
 .no-padding{
@@ -366,47 +368,47 @@ h3.lessmargin{
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-.upper-bite{
+.upper-bite.show{
     // transform:translate(0);
-    -webkit-animation: upper-bite 500ms ease infinite both;
-    animation: upper-bite 500ms ease infinite both;
+    -webkit-animation: upper-bite 500ms ease 1 both;
+    animation: upper-bite 500ms ease 1 both;
 }
 
-.lower-bite{
+.lower-bite.show{
     // transform:translate(0);
-    -webkit-animation: lower-bite 500ms ease infinite both;
-    animation: lower-bite 500ms ease infinite both;
+    -webkit-animation: lower-bite 500ms ease 1 both;
+    animation: lower-bite 500ms ease 1 both;
 }
 
-.head-lift{
-    -webkit-animation: head-lift 500ms ease infinite both;
-    animation: head-lift 500ms ease infinite both;
+.head-lift.show{
+    -webkit-animation: head-lift 500ms ease 1 both;
+    animation: head-lift 500ms ease 1 both;
 }
 
-.hat-jiggle{
-    -webkit-animation: hat-jiggle 500ms ease infinite both;
-    animation: hat-jiggle 500ms ease infinite both;
+.hat-jiggle.show{
+    -webkit-animation: hat-jiggle 500ms ease 1 both;
+    animation: hat-jiggle 500ms ease 1 both;
 }
 
-.shade-translate{
-    -webkit-animation: shade-translate 500ms ease infinite both;
-    animation: shade-translate 500ms ease infinite both;
+.shade-translate.show{
+    -webkit-animation: shade-translate 500ms ease 1 both;
+    animation: shade-translate 500ms ease 1 both;
 }
 
-.shade-scale{
-    -webkit-animation: shade-scale 500ms ease infinite both;
-    animation: shade-scale 500ms ease infinite both;
+.shade-scale.show{
+    -webkit-animation: shade-scale 500ms ease 1 both;
+    animation: shade-scale 500ms ease 1 both;
 }
 
-.headphone-jiggle{
-    -webkit-animation: headphone-jiggle 500ms ease infinite both;
-    animation: headphone-jiggle 500ms ease infinite both;
+.headphone-jiggle.show{
+    -webkit-animation: headphone-jiggle 500ms ease 1 both;
+    animation: headphone-jiggle 500ms ease 1 both;
 }
 
 @keyframes upper-bite {
     0% {-webkit-transform:translateY(0px); transform:translateY(0px);}
     60% {-webkit-transform:translateY(-13px); transform:translateY(-13px);}
-    75% {-webkit-transform:translateY(0px); transform:translateY(5px);}   
+    75% {-webkit-transform:translateY(5px); transform:translateY(5px);}   
     100% {-webkit-transform:translateY(0px); transform:translateY(0px);}    
      
 }
@@ -420,7 +422,8 @@ h3.lessmargin{
 @keyframes head-lift {
     10% {-webkit-transform:translateY(0px); transform:translateY(0px);}
     60% {-webkit-transform:translateY(-12px); transform:translateY(-12px);}
-    75% {-webkit-transform:translateY(0px); transform:translateY(0px);}    
+    75% {-webkit-transform:translateY(5px); transform:translateY(5px);}   
+    100% {-webkit-transform:translateY(0px); transform:translateY(0px);}     
 }
 
 @keyframes hat-jiggle{
@@ -433,7 +436,8 @@ h3.lessmargin{
 @keyframes shade-translate {
     10% {-webkit-transform:translateY(0px)scaleY(1.0); transform:translateY(0px)scaleY(1.0);}
     60% {-webkit-transform:translateY(-18px)scaleY(1.15); transform:translateY(-18px)scaleY(1.15);}
-    75% {-webkit-transform:translateY(0px)scaleY(1.0); transform:translateY(0px)scaleY(1.0);}    
+    75% {-webkit-transform:translateY(3px)scaleY(0.96); transform:translateY(3px)scaleY(0.96);}  
+    100% {-webkit-transform:translateY(0px)scaleY(1.0); transform:translateY(0px)scaleY(1.0);}   
 }
 
 @keyframes headphone-jiggle {
@@ -450,3 +454,102 @@ h3.lessmargin{
 // }
 
 /*******/
+
+
+/*google-doc component*/
+
+.google-doc{
+    height: 65vh;
+}
+
+iframe.google-doc-iframe{
+    width: 100%;
+    max-width: 850px;
+    height: 100%;
+    border: none;
+    box-shadow: 0px 0px 10px 0px #BBB;
+    z-index: 100;
+    overflow: visible;
+}
+
+object{
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: 0px 0px 10px 0px #BBB;
+    z-index: 100;
+    overflow: visible;
+}
+
+.center-iframe{
+    display:flex;
+    justify-content: center;
+    height: 100%;
+    background-color:#f1f1f1;
+    
+}
+
+/*****/
+
+/*documents route*/
+
+.doc-card{
+    margin:0;
+}
+
+.margin-auto{
+    margin:auto;
+}
+
+.doc-logo{
+    float:right;
+    margin-top:15px;
+    margin-bottom:5px;
+    
+    padding: 5px;    
+    height:36px;
+}
+
+.doc-image{
+    padding: 5px;    
+    height:36px;
+}
+
+.doc-container{
+    background-color:#f1f1f1;
+    overflow:visible;
+}
+
+.doc-fullscreen{
+    max-width:1000px;
+    width:100vw;
+    height:80vh;
+    overflow:hidden;
+}
+
+@media screen and (max-width: 599px) {
+    .doc-fullscreen{
+        height:calc(100vh - 56px);
+    }
+    .google-doc .center-iframe{
+        height: 80%;
+    }
+}
+
+.pdf-fullscreen{
+    width:95vw;
+    height:90vh;
+    overflow:hidden;
+}
+
+.no-max-size{
+    max-width: none;
+    max-height:none;
+}
+
+/************/
+
+iframe.game-iframe{
+    width: 100%;
+    height: 70vh;
+}
