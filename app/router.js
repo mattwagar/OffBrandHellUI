@@ -11,8 +11,12 @@ Router.map(function() {
     path: '/'
   }, function() {
     this.route('about');
-    this.route('team' );
-    this.route('blog' );
+    this.route('team');
+    this.route('blog', function(){
+      this.route('post', {
+        path: '/post/:post_id'
+      })
+    });
     this.route('play' );
     this.route('home' );
     this.route('documentation');

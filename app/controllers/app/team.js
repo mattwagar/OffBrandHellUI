@@ -56,9 +56,9 @@ export default Ember.Controller.extend({
             id: "mwagar",
             pic: "assets/images/mwagar_profile_pic.jpg",
             name: 'Matthew Wagar',
-            role: 'Programmer',
+            role: 'Level Designer / Web Developer',
             color: 'mwagar-color',
-            icon: 'code',
+            icon: 'extension',
             currentyear:4,
             yearTitle:"Junior",
             years:[1,2,3,4,5],
@@ -71,8 +71,8 @@ export default Ember.Controller.extend({
             coffee:1,
             skills:['Unity', 'Maya', 'C#', 'Java Script', 'Adobe Suite'],
             showDialog: false,
-            myrole:"My responsibilities are programming, architecting, and implementing the key functionality in REMemberance. In addition, because of my web development experience, I have created this website from scratch using Ember JS. I also do small fun things like design the Off Brand Hell Logo.",
-            aboutme:"I have a creative mind with a technical skillset. From game design to web development to data visualization, I am interested in any job with a creative edge. I am currently pursuing a BS in Computer Science with centrations in Game Programming & Development and Graphics."
+            myrole:"I am very much a jack of all trades when it comes designing, modeling, programming, and marketing for this project. My main role is creating clever level designs that encourage emergent gameplay. However, marketting-wise I also created this website from scratch using Ember JS and designed the Off Brand Hell logo.",
+            aboutme:"I have a creative mind with a technical skillset. From game design to web development to data visualization, I am interested in any job with a creative edge. I am currently pursuing a BS in Computer Science with concentration in Game Programming & Development. Also I foster cats, and yes, my heart breaks every time they're taken from me. I'm on my 8th cat since I've started."
         }),
         
         
@@ -159,7 +159,7 @@ export default Ember.Controller.extend({
             programSkill: 2,
             artSkill: 3,
             leadSkill: 1,
-            comSkill: 0,
+            comSkill: 2,
             orgSkill: 1, 
             coffee:3,
             skills:['Rigging', 'Animation', 'Scripting'],
@@ -189,6 +189,54 @@ export default Ember.Controller.extend({
             showDialog: false,
             myrole:"Noah is a programmer. He'll be helping with animations too.",
             aboutme:"Noah is a Drexel University senior from California. Outside of classes, he's a member of the Entrepreneurial Game Studio and the Taekwondo club."
+        }),
+
+        Ember.Object.create({
+            id: "jswanick",
+            pic: "assets/images/jswanick_profile_pic.jpg",
+            name: 'Jimmy Swanick',
+            role: 'Concept Artist',
+            color: 'jswanick_color',
+            icon: 'code',
+            currentyear:5,
+            years:[1,2,3,4,5],
+            maxyear: 5,
+            yearTitle:"Senior",
+            programSkill: 3,
+            artSkill: 3,
+            leadSkill: 2,
+            comSkill: 3,
+            orgSkill: 0,
+            coffee:3,
+            skills:['Unity', 'Photoshop', 'Maya', 'Mudbox', 'Level Design'],
+            showDialog: false,
+            myrole:"I illustrate, I program in Unity, I build web apps, I perform arcane source control rituals, and I play way too many games.",
+            aboutme:"I'm an illustrator, musician, writer, programmer, communicator, viewer of anime, crafter of shitty jokes, and player of so, so, so many games. I'm a jack of all trades and a master of reaching intermediate level of each of them (maybe) before finding a new hobby and getting distracted.\n"+
+            "I'm down for pretty much every genre of game - wonky indies you can play in an afternoon,  competitive strategy games, AAA rpgs, a whole lot of party games,  and even ancient DOS games - so please forgive me interupting every twenty seconds to point out a relevant game I just remembered.\n"+
+            "I'm in it for the variety and the adventure. <3"
+        }),
+
+        Ember.Object.create({
+            id: "jharvey",
+            pic: "assets/images/jharvey_profile_pic.jpg",
+            name: 'John Harvey',
+            role: 'Level Designer',
+            color: 'jharvey_color',
+            icon: 'extension',
+            currentyear:3,
+            years:[1,2,3,4],
+            maxyear: 4,
+            yearTitle:"Junior",
+            programSkill: 2,
+            artSkill: 2,
+            leadSkill: 2,
+            comSkill: 2,
+            orgSkill: 2,
+            coffee:2,
+            skills:['Unity', 'Maya', 'Mudbox', 'Level Design'],
+            showDialog: false,
+            myrole:"Lead overall designer, I will however be mainly focusing on how the level should feel/play out.",
+            aboutme:"You can find out more about me on my website :D"
         }),
         
         

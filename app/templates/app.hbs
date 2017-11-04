@@ -14,9 +14,13 @@
                             {{!--<div class="md-subhead logo-subhead">A Game Company</div>--}}
                         </div>
                         <div class="nav-section">
-                        {{#paper-button class=(if (eq selectedRoute 'app.play') 'tab-button md-focused' 'tab-button') primary=true value="app.play" href=(href-to "app.play") onClick=(action "selectRoute" "app.play")}}
-                            {{!--{{paper-icon "play" size=48}}--}}
-                            <b>Play</b>
+                        {{#paper-button class=(if (eq selectedRoute 'app.home') 'tab-button md-focused' 'tab-button') primary=true value="app.home" href=(href-to "app.home") onClick=(action "selectRoute" "app.home")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Home</b>
+                        {{/paper-button}}
+                        {{#paper-button class=(if (eq selectedRoute 'app.blog') 'tab-button md-focused' 'tab-button') primary=true value="app.blog" href=(href-to "app.blog") onClick=(action "selectRoute" "app.blog")}}
+                            {{!--{{paper-icon "blog" size=48}}--}}
+                            <b>Blog</b>
                         {{/paper-button}}
                         {{#paper-button class=(if (eq selectedRoute 'app.team') 'tab-button md-focused' 'tab-button') primary=true value="app.team" href=(href-to "app.team") onClick=(action "selectRoute" "app.team")}}
                             {{!--{{paper-icon "web" size=48}}--}}
