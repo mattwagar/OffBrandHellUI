@@ -1,1 +1,19 @@
-{{outlet}}
+
+{{#paper-grid-list
+    cols="1 sm-2 md-4 gt-md-4"
+    rowHeight="gt-md-1:1 2:2"
+    gutter="12px gt-sm-16px" as |grid|}}
+
+    {{#each posts as |post|}}
+        {{#if (eq post.id post_id)}}
+            {{#paper-button raised=true mini=true primary=true href=(href-to "app.blog.archive")}}{{paper-icon "keyboard backspace"}}{{/paper-button}}
+            <h1>{{post.title}}</h1>
+            <h4>Written By {{post.author}} | {{post.date}}</h4>
+            {{#each post.text as |t|}}
+            <div class="flex-80">{{t}}</div>
+            <br>
+            {{/each}}
+        {{/if}}
+
+    {{/each}}
+{{/paper-grid-list}}

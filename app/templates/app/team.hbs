@@ -1,5 +1,6 @@
 
     
+<div class="page-padding">
 
     <div id="route-header">The Team</div>
 
@@ -69,7 +70,7 @@
                             {{/paper-tabs}}
                             {{#paper-dialog-content class="no-padding"}}
                             <div id="liquid-profile">
-                            {{#liquid-if (eq selectedProfileTab "aboutme") class="md-padding dynamic-animation" as |current|}}
+                            {{#liquid-if (eq selectedProfileTab "aboutme") class="page-padding dynamic-animation" as |current|}}
                                 <h3 class="lessmargin">My Role</h3>
                                     {{profile.myrole}}
                                 <h3 class="lessmargin">About Me</h3>
@@ -100,3 +101,5 @@
             {{/if}}
         {{/each}}
     {{/paper-grid-list}}
+
+</div>

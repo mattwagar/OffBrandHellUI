@@ -5,10 +5,12 @@ export default Ember.Controller.extend({
     posts: Ember.computed(function () {
         return [
             Ember.Object.create({
+                id:"1",
                 pic: "assets/images/blog/level_design1_square.png",
                 title: 'Level Design Structure and Layout of Remembrance',
                 icon: 'extension',
                 author: 'Matthew Wagar',
+                date: '11/1/2017',
                 showDisplay: false,
                 text: [
                 `In Remembrance, there are many mechanics to consider when creating a level. Some of the major mechanics are passing through walls, enemy pathing, and memento nests. The player should think about all of these options in both the explore and escape phase of the level.`,
@@ -26,9 +28,9 @@ export default Ember.Controller.extend({
         ];
     }),
 
-    actions: {
-        togglePost(post){
-            post.set("showDisplay", !post.get('showDisplay'));
-        }
-    }
+    // actions: {
+    //     togglePost(post){
+    //         post.set("showDisplay", !post.get('showDisplay'));
+    //     }
+    // }
 });

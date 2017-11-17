@@ -1,3 +1,5 @@
+<div class="page-padding">
+
 <div id="route-header">Documentation</div>
 
 {{#paper-card  class="doc-card" as |card|}}
@@ -10,18 +12,28 @@
         <b>Game Design Document</b>
         {{/tabs.tab}}
 
-        {{#tabs.tab value="gantt"}}
-        <b>Gantt Chart</b>
+        {{#tabs.tab value="asset"}}
+        <b>Asset List</b>
+        {{/tabs.tab}}
+
+        {{#tabs.tab value="workflow"}}
+        <b>Onboarding and Workflow</b>
         {{/tabs.tab}}
 {{/paper-tabs}}
 
-{{#liquid-if (eq selectedDoc "gdd") class="md-padding dynamic-animation doc-container" as |current|}}
-    {{google-doc}} 
-{{else}}
-    {{gantt-chart}}
+{{#liquid-if (eq selectedDoc "gdd") class="page-padding dynamic-animation doc-container" as |current|}}
+    {{google-doc title="Game Design Document" iframe="https://docs.google.com/document/d/e/2PACX-1vRMZioH7GmoYdY5yabryIWk2rQnoiC4wva-PozTMZ74TeyweX1JFgMZmm_lbTO5GJWS00KMJWNG44AN/pub?embedded=true&rm=demo" link="https://docs.google.com/document/d/1i1B3gqU-kZV7UnRoDYsrx8RmYy0XoVBqAI7DtCDLGmU/edit?usp=sharing"}} 
+{{else if (eq selectedDoc "asset")}}
+    {{google-doc title="Asset List" iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAty4u7J5Zhdi7EG16wVBVGO3SDXjVLBJvDqZPUstFmFX_P4iw_UTV4Bjf9cvsjbLwJOHpt9EkEmKg/pubhtml?widget=true&amp;headers=false" link="https://docs.google.com/spreadsheets/d/1y73gLuq1O3DofMOc4qV2lf8hqSRluyg1_xbVWSD6sh8/edit?usp=sharing"}} 
+    {{!-- {{gantt-chart}} --}}
+{{else if (eq selectedDoc "workflow")}}
+    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/document/d/e/2PACX-1vRXCMLn3qlKSjZ9QkdN4li6s05gfn08_p9lDQZuYiZ6fN_AWZn9AAjlhnzGID21ESNiSwJ6lrKr0mV8/pub?embedded=true" link="https://docs.google.com/document/d/1lbQuBS-AkbV-Tsqqee6uTGfRAFUBrP9stT1AF5d-Hy4/edit?usp=sharing"}} 
+    
 {{/liquid-if}}
 
 {{/paper-card}}
 
 
 {{!--{{google-doc}}--}}
+
+</div>

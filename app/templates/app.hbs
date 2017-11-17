@@ -4,13 +4,13 @@
     
     <div class="layout-column flex-xs flex-sm flex-md flex-gt-md-85 full-page">
                 <div class="layout-row flex">
-                    <div class="flex-xs-30 flex-sm-20 flex-gt-md-15 left-tab">
+                    <div class="flex-xs-30 flex-sm-20 flex-gt-md-15 left-tab fixed-nav-bar">
                         <div class="logo-section">
                             <a href={{href-to "app.home"}} onClick={{action "selectRoute" "app.home"}}>
                             {{!--<img src="assets/images/Logo.svg" class="fit-image">--}}
                             {{logo-svg}}
                             </a>
-                            <div class="md-headline logo-head">Off Brand Hell</div>
+                            <div class="md-headline logo-head">Off Brand Hell Games</div>
                             {{!--<div class="md-subhead logo-subhead">A Game Company</div>--}}
                         </div>
                         <div class="nav-section">
@@ -18,7 +18,11 @@
                             {{!--{{paper-icon "home" size=48}}--}}
                             <b>Home</b>
                         {{/paper-button}}
-                        {{#paper-button class=(if (eq selectedRoute 'app.blog') 'tab-button md-focused' 'tab-button') primary=true value="app.blog" href=(href-to "app.blog") onClick=(action "selectRoute" "app.blog")}}
+                        {{#paper-button class=(if (eq selectedRoute 'app.play') 'tab-button md-focused' 'tab-button') primary=true value="app.play" href=(href-to "app.play") onClick=(action "selectRoute" "app.play")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Play</b>
+                        {{/paper-button}}
+                        {{#paper-button class=(if (eq selectedRoute 'app.blog.archive') 'tab-button md-focused' 'tab-button') primary=true value="app.blog" href=(href-to "app.blog") onClick=(action "selectRoute" "app.blog")}}
                             {{!--{{paper-icon "blog" size=48}}--}}
                             <b>Blog</b>
                         {{/paper-button}}
@@ -34,8 +38,8 @@
                         
                     </div>
 
-                    <div id="content" class="flex-grow flex-gt-md-90 flex-gt-lg-80 content-background route-content">
-                        {{liquid-outlet class="md-padding"}}
+                    <div id="content" class="flex-grow flex-gt-md-90 flex-gt-lg-80 content-background">
+                        {{liquid-outlet}}
                     </div>
                     <div class="flex-gt-md-15"></div>
                     

@@ -16,10 +16,15 @@ Router.map(function() {
       this.route('post', {
         path: '/post/:post_id'
       })
+      this.route('archive');
     });
-    this.route('play' );
+    this.route('play', function() {
+      this.route('web');
+    });
     this.route('home' );
     this.route('documentation');
+    this.route('web');
+    this.route('loading');
   });
 });
 

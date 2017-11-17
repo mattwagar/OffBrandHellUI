@@ -9,6 +9,14 @@ export default function(){
   let duration = 500;
 
   this.transition(
+    this.fromRoute('app.blog.archive'),
+    this.toRoute('app.blog.post'),
+    this.toValue(true),
+    this.use('fade'),
+    this.reverse('fade')
+  )
+
+  this.transition(
     this.childOf('#liquid-profile'),
     this.toValue(true),
     this.use('toRight'),
