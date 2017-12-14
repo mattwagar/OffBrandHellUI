@@ -646,3 +646,29 @@ iframe.game-iframe{
     font-size: 1.5em;
 }
 
+
+.tab-height{
+    height:75vh;
+}
+
+.left-doc-tab{
+    background-color: #f2807a;
+}
+
+.tab-doc-button{
+    margin:0;
+    height:45px;
+    line-height: 45px;
+    width:100%;
+
+    color: rgb(255, 255, 255) !important;
+
+    &:hover{
+        background-color: rgba(255,255,255, 0.1) !important;
+    }
+    
+}
+
+.tab-doc-button.md-focused{
+    background-color: rgba(255,255,255, 0.3) !important;
+}

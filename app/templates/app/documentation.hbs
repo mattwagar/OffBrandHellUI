@@ -19,16 +19,122 @@
         {{#tabs.tab value="workflow"}}
         <b>Onboarding and Workflow</b>
         {{/tabs.tab}}
+
+        {{#tabs.tab value="sell"}}
+        <b>Sell Presenations</b>
+        {{/tabs.tab}}
+
+        {{#tabs.tab value="scrum"}}
+        <b>Scrum Presentations</b>
+        {{/tabs.tab}}
 {{/paper-tabs}}
 
-{{#liquid-if (eq selectedDoc "gdd") class="page-padding dynamic-animation doc-container" as |current|}}
+{{#liquid-if (eq selectedDoc "gdd") class="dynamic-animation doc-container" as |current|}}
+    <div class="page-padding">
     {{google-doc title="Game Design Document" iframe="https://docs.google.com/document/d/e/2PACX-1vRMZioH7GmoYdY5yabryIWk2rQnoiC4wva-PozTMZ74TeyweX1JFgMZmm_lbTO5GJWS00KMJWNG44AN/pub?embedded=true&rm=demo" link="https://docs.google.com/document/d/1i1B3gqU-kZV7UnRoDYsrx8RmYy0XoVBqAI7DtCDLGmU/edit?usp=sharing"}} 
+    </div>
 {{else if (eq selectedDoc "asset")}}
+    <div class="page-padding">
     {{google-doc title="Asset List" iframe="https://docs.google.com/spreadsheets/d/e/2PACX-1vQAty4u7J5Zhdi7EG16wVBVGO3SDXjVLBJvDqZPUstFmFX_P4iw_UTV4Bjf9cvsjbLwJOHpt9EkEmKg/pubhtml?widget=true&amp;headers=false" link="https://docs.google.com/spreadsheets/d/1y73gLuq1O3DofMOc4qV2lf8hqSRluyg1_xbVWSD6sh8/edit?usp=sharing"}} 
-    {{!-- {{gantt-chart}} --}}
+    </div> 
 {{else if (eq selectedDoc "workflow")}}
+    <div class="page-padding">
     {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/document/d/e/2PACX-1vRXCMLn3qlKSjZ9QkdN4li6s05gfn08_p9lDQZuYiZ6fN_AWZn9AAjlhnzGID21ESNiSwJ6lrKr0mV8/pub?embedded=true" link="https://docs.google.com/document/d/1lbQuBS-AkbV-Tsqqee6uTGfRAFUBrP9stT1AF5d-Hy4/edit?usp=sharing"}} 
-    
+    </div>
+{{else if (eq selectedDoc "sell")}}
+    <div class="layout-row flex tab-height">
+        <div class="flex-20 left-doc-tab">
+            <div class="nav-section">
+                {{#paper-button class=(if (eq selectedSell 'sell1') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell1")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Final Sell</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedSell 'sell10') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell10")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 10 Sell</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedSell 'sell9') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell9")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 9 Sell</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedSell 'sell8') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell8")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 8 Sell</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedSell 'sell7') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell7")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 7 Sell</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedSell 'sell3') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell3")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 3 Sell</b>
+                {{/paper-button}}
+            </div>
+        </div>  
+        <div class="flex page-padding">       
+                {{#if (eq selectedSell "sell1")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vSxw2g8ChlrVhgxw04y64CSY8q3yi5VkbMDTJdX12DkyC2N2ejA9dMHEm5OmsPNm2yCdtrADeCq9eso/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/13g1GDyaEtYK050T-LVdBGBtXothZvUKL53ywBRWbmWs/edit?usp=sharing"}}
+                {{else if (eq selectedSell "sell10")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vRV2jZYyjmWj5VwLtJz4rpnTy0LY_LXCBSoHH8p9kF3-qrfOUQ-axnQv5w-lFX_M59irYVaXf0Qs32P/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1MEYZuBEvSZLGMxI-9oc209FbuvtPnPJe1TptIhqBMKo/edit?usp=sharing"}}
+                {{else if (eq selectedSell "sell9")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vSuIDXLqGi5RjI4XX65LOqXNK-RnbGct4B5RfUpDIM6GH0HWBWgzQTTzXbmtwl2DM7UnFw6tEuG68uT/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1IK7JEVt3jHpa_auDyT_f-TdxjvOFXTzR_3lYsiXLvLk/edit?usp=sharing"}}
+                {{else if (eq selectedSell "sell8")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vRh5i7NMfo8ZBchHSN9i6zOMhV9PJKOR98ZUQFYLJrB-BxFq8MrgjRiQYeqaioENbpilxKQfP3k4XSA/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1SLbOwuyfeKNJzFQ4x-UwkVRp1-0PNMq1YCe4eZYkHuQ/edit?usp=sharing"}}
+                {{else if (eq selectedSell "sell7")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vTYGcCcuHOYPUMT21WtFO_zi5yvWSH15C1c-YOpu6ijX-vPlLtSoYFUL85mJQMruZBkbiXBRXMjnmTM/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/13FOUliVY99CUowgvJfQCghOQati0Db3Q-eNylR_pByg/edit?usp=sharing"}}
+                {{else if (eq selectedSell "sell3")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vSRLehlD77XKxQQW707atHUSakIB8x0jGYUslPYF4QD0asMaxszDoux_nlt0JXw6tZ0hSAMjD5ruFnB/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/16Yzq-TtMUC63EKNUiiQab7XlJqoEPqVh1VCbXS-9ACs/edit?usp=sharing"}}
+                {{/if}}
+        </div>
+              
+    </div>
+{{else if (eq selectedDoc "scrum")}}
+    <div class="layout-row flex tab-height">
+        <div class="flex-20 left-doc-tab">
+            <div class="nav-section">
+                {{#paper-button class=(if (eq selectedScrum 'scrum10') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum10")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 10 Scrum</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedScrum 'scrum9') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum9")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 9 Scrum</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedScrum 'scrum8') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum8")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 8 Scrum</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedScrum 'scrum7') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum7")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 7 Scrum</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedScrum 'scrum3') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum3")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 3 Scrum</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedScrum 'scrum2') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum2")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 2 Scrum</b>
+                {{/paper-button}}
+            </div>
+        </div>  
+        <div class="flex page-padding">       
+                {{#if (eq selectedScrum "scrum10")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQP_fbe_w22I3I8f-gwR1c-5wfilrpr4csoOE6U5q3wXppjIoh2zwl2-A881G3ThgHz4yenpwN-d2wi/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1uU8YagR-zoT-EYtgJ7PG1OUmLkQCRD1AHBC6EiCAqvo/edit?usp=sharing"}}
+                {{else if (eq selectedScrum "scrum9")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vTphWjMtL1vcyry8kFS_QayoQadtNhlwBuKAOlKU8Rln-DS60q_yHfHFxdl1__QCeIDepOgpLNmlofi/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1ODjtaBFQTxMNgCVtP32udSYiZh7nzdb5y3wz8GgowDc/edit?usp=sharing"}}
+                {{else if (eq selectedScrum "scrum8")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQPzjQwghaEoJWbAwoGo46aPKrzoYwVi2vR4y3YWi1BFGaxHNANNUuAbKmR8Y954tRsC1046Q7JhrHz/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1f3vdSl-s4TC55w0_K3MyEiyX4rBakda-k12C4FFTckU/edit?usp=sharing"}}
+                {{else if (eq selectedScrum "scrum7")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQ1znLB7BR74h3g9Ic39-Lw8ZA10HAn0i2Ukj6B3ZQt0Me98hUQRsBZLS97U_oICJ5uj9xOtHFOXyvy/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1JePVCSEfpUy2fMuDHhqe2F5Yc6Vc3G2EXbOJ8Nj-ut0/edit?usp=sharing"}}
+                {{else if (eq selectedScrum "scrum3")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vTltRDKa_rq2XoBGD4aIo3owch0LY7jT3ufXrambVG_o5tC7La6JEfjRdSief71iozYLsKX_nrmVt0a/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1_bmkg3cGqSljLmONQ8Sc6jMbrRPeLeD33rsSFyNTp5E/edit?usp=sharing"}}
+                {{else if (eq selectedScrum "scrum2")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vSbhmt7GbpKw9ifxxvwGfD6teoU24J4dcXKKOLUk162sUciv26-Y3UPoe9GKuy7DGcZ9HAeHChyMjTF/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1K5sOggxxmcVEZttGHSWErqAeLR9bw4GFAKG1XTV0ss4/edit?usp=sharing"}}
+                {{/if}}
+        </div>
+              
+    </div>
 {{/liquid-if}}
 
 {{/paper-card}}
