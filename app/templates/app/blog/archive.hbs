@@ -1,7 +1,7 @@
 <div id="route-header">Blog</div>
 
 {{#paper-grid-list
-    cols="1 sm-2 md-4 gt-md-4"
+    cols="1 sm-2 md-3 gt-md-3"
     rowHeight="gt-md-1:1 2:2"
     gutter="12px gt-sm-16px" as |grid|}}
 
@@ -10,12 +10,12 @@
         {{#paper-button class="profile-button" raised=false href=(href-to "app.blog.post" post.id)}}
 
         {{/paper-button}}
-        <img src={{post.pic}} class="fit-image">
+        <img src={{post.imgSrc}} class="fit-image">
         {{#tile.footer class="grid-tile-footer"}}
             <div class="layout-row flex">
-                <div class="flex-initial icon-padding">{{paper-icon post.icon class="white" size=36}}</div>
                 <div class="layout-column flex">
-                    <div class="flex"><h3>{{post.title}}</h3></div>
+                    <div class="flex archive-head">{{post.title}}</div>
+                    <div class="flex archive-subhead">{{post.author.displayName}} | {{mmddyy post.published}}</div>
                 </div>
             </div>
         {{/tile.footer}}
