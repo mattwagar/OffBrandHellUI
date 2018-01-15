@@ -85,7 +85,15 @@ body {
     width: 100%;
     height:100%;
     box-sizing: border-box;
-    
+
+}
+
+.fit-post{
+    width: 50%;
+    height:100%;
+    box-sizing: border-box;
+    background-color: white;
+
 }
 
 .logo-section{
@@ -675,12 +683,65 @@ iframe.game-iframe{
 }
 
 .archive-head{
-    font-size: 1em;
-    padding: 0.1rem 1rem;
+    font-size: 1.25em;
+    padding: 0.1rem .75rem;
 }
 
 .archive-subhead{
-    font-size: .75em;
-    color:#ddd;
-    padding:0.1rem 1rem;
+    font-size: 1em;
+    color:#555;
+    padding:0.1rem .75rem;
+}
+
+.archive-subtitle{
+    font-size: 1.125em;
+    // color:#5;
+    padding:0.1rem .75rem;
+}
+
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    &:hover{
+        background-color: #ccc;
+        cursor: pointer;
+    }
+}
+
+.blog-card{
+    padding: 1rem 0rem;
+}
+
+.chips{
+    padding: 0.5rem 0.75rem;
+}
+
+.post-body{
+    height: inherit;
+}
+
+.image-button{
+    position: relative;
+}
+
+.active-tag{
+    background-color: #aaa;
+}
+
+.blog-button{
+    position:absolute;
+    width:50%;
+    height:30px;
+    top:100%;
+    left:25%;
 }

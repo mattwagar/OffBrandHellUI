@@ -89,8 +89,9 @@
                                         <h3 class="lessmargin">Skills:</h3>
                                         
                                         {{paper-chips
+                                        addItem=(action "setTab")
                                         content=profile.skills
-                                        readOnly=true}}
+                                        readOnly=false}}
                                     </div>
                                 </div>
                             {{/liquid-if}}

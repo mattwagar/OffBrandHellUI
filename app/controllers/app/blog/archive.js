@@ -1,22 +1,53 @@
 import Ember from 'ember';
+import groupBy from 'ember-group-by';
 
 export default Ember.Controller.extend({
 
     response: Ember.inject.controller('app.blog'),
-    posts: Ember.computed("response.model.posts", function(){
+    posts: Ember.computed("response.model.posts", function () {
         let items = this.get("response.model.posts").items;
         // console.log(items);
         let imgReg = /<img(.*?)\/>/g;
         let srcReg = /src="(.*?)"/g;
         items.forEach(item => {
             let image = imgReg.exec(item.content);
-            console.log(item.content.includes("img"));
-            item.imgSrc = srcReg.exec(image[0])[1];
+            if (item.content.includes("img")) { item.imgSrc = srcReg.exec(image[0])[1] } 
+            else {item.imgSrc = "assets/images/blog/blog_placeholder.png"}
             imgReg.lastIndex = 0;
             srcReg.lastIndex = 0;
         });
         return items;
-    })
+    }),
+
+    chosenTag: "",
+
+    taggedPosts: Ember.computed("posts", "chosenTag", function () {
+        let posts = this.get('posts');
+        let chosenTag = this.get('chosenTag');
+        if (chosenTag === "") {
+            return posts;
+        } else {
+            return posts.filter(post => {
+                if (post.labels !== undefined && post.labels !== null) {
+                    return post.labels.includes(chosenTag);
+                }
+            });
+        }
+        console.log(posts);
+    }),
+
+    actions: {
+        setTag(tag) {
+            let chosenTag = this.get('chosenTag');
+            if (tag === chosenTag) {
+                this.set('chosenTag', "");
+            } else {
+                this.set('chosenTag', tag);
+            }
+        }
+    }
+
+
 
     // posts: Ember.computed(function () {
     //     return [
@@ -139,28 +170,28 @@ export default Ember.Controller.extend({
     //             in my life.`,
     //             ]
     //         }),
-            // Ember.Object.create({
-            //     id: "7",
-            //     pic: "assets/images/blog/blog_6.png",
-            //     title: "Eye of the Hurricane",
-            //     icon: 'code',
-            //     author: 'Noah Nam',
-            //     date: '11/15/2017',                
-            //     showDisplay: false,
-            //     text: [
-            //     `This week I wasn't assigned much to do. I had adding a death animation for Rem, creating a tutorial
-            //     level for the X-ray and dash mechanic, and adding tutorial text to the walls of levels.`,
-            //     `<b>Positive Outcomes</b>`,
-            //     `I got my tasks completed.`,
-            //     `Fixed a few bugs that stopped the player from progressing through the game.`,
-            //     `<b>Negative Outcomes</b>`,
-            //     `Our codebase is getting very messy, and our project hierarchy has multiple copies of the same prefabs,
-            //     which is leading to confusion on which prefab to update.`,
-            //     `Next term, there'll be double the people working on this project. We'll need to clean the code and asset
-            //     folder or it'll be a rough winter term.`,
-            //     ]
-            // }),
-        // ];
+    // Ember.Object.create({
+    //     id: "7",
+    //     pic: "assets/images/blog/blog_6.png",
+    //     title: "Eye of the Hurricane",
+    //     icon: 'code',
+    //     author: 'Noah Nam',
+    //     date: '11/15/2017',                
+    //     showDisplay: false,
+    //     text: [
+    //     `This week I wasn't assigned much to do. I had adding a death animation for Rem, creating a tutorial
+    //     level for the X-ray and dash mechanic, and adding tutorial text to the walls of levels.`,
+    //     `<b>Positive Outcomes</b>`,
+    //     `I got my tasks completed.`,
+    //     `Fixed a few bugs that stopped the player from progressing through the game.`,
+    //     `<b>Negative Outcomes</b>`,
+    //     `Our codebase is getting very messy, and our project hierarchy has multiple copies of the same prefabs,
+    //     which is leading to confusion on which prefab to update.`,
+    //     `Next term, there'll be double the people working on this project. We'll need to clean the code and asset
+    //     folder or it'll be a rough winter term.`,
+    //     ]
+    // }),
+    // ];
     // }),
 
     // actions: {

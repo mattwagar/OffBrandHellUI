@@ -1,25 +1,33 @@
 <div id="route-header">Blog</div>
 
-{{#paper-grid-list
-    cols="1 sm-2 md-3 gt-md-3"
-    rowHeight="gt-md-1:1 2:2"
-    gutter="12px gt-sm-16px" as |grid|}}
-
-    {{#each posts as |post|}}
-        {{#grid.tile as |tile|}}
-        {{#paper-button class="profile-button" raised=false href=(href-to "app.blog.post" post.id)}}
-
-        {{/paper-button}}
-        <img src={{post.imgSrc}} class="fit-image">
-        {{#tile.footer class="grid-tile-footer"}}
-            <div class="layout-row flex">
-                <div class="layout-column flex">
-                    <div class="flex archive-head">{{post.title}}</div>
-                    <div class="flex archive-subhead">{{post.author.displayName}} | {{mmddyy post.published}}</div>
-                </div>
-            </div>
-        {{/tile.footer}}
+    {{#each taggedPosts as |post|}}
+        <div class="blog-card layout-row">
         
-        {{/grid.tile}}
+        <div class="flex image-button">
+            {{#paper-button class="profile-button" raised=false href=(href-to "app.blog.post" post.id)}}
+        
+        {{/paper-button}}
+            <img src={{post.imgSrc}} class="fit-image">
+        </div>
+        <div class="fit-post flex post-body">
+            <div class="flex archive-head">{{post.title}}</div>
+            <div class="flex archive-subhead">{{post.author.displayName}} | {{mmddyy post.published}}</div>
+
+            {{#if (gt post.labels.length 0)}}
+            <hr>
+            <div class="flex archive-subtitle"> Tags </div>
+                <div class="chips">
+                {{#each post.labels as |label|}}
+                    <div class="chip" class={{if (eq label chosenTag) "active-tag"}} onclick={{action "setTag" label}}>
+                        {{label}}
+                    </div>
+                {{/each}}
+                </div>
+            {{/if}}
+            <hr>
+            <div class="image-button">
+                {{#paper-button raised=true primary=true class="blog-button" href=(href-to "app.blog.post" post.id)}}Read The Article{{/paper-button}}
+            </div>
+        </div>
+        </div>        
     {{/each}}
-{{/paper-grid-list}}
