@@ -85,15 +85,16 @@ body {
     width: 100%;
     height:100%;
     box-sizing: border-box;
-
+    @media screen and (max-width: 1149px){
+        width:50vw;
+    }
 }
 
 .fit-post{
-    width: 50%;
+    width: 50vw;
     height:100%;
     box-sizing: border-box;
-    background-color: white;
-
+    background-color: white;    
 }
 
 .logo-section{
@@ -141,6 +142,26 @@ body {
     top: 0px;
     left: 0px;
     box-shadow: 0px 0px 10px #888;
+    @media screen and (max-width: 1149px){
+        width:50vw;   
+    }
+}
+.blog-card.layout-row{
+    @media screen and (min-width: 200px){
+        display:none;
+    }
+    @media screen and (min-width: 1149px){
+        display:flex;
+    }
+}
+
+.blog-card.layout-column{
+    @media screen and (min-width: 200px){
+        display:flex;
+    }
+    @media screen and (min-width: 1149px){
+        display:none;
+    }
 }
 
 .icon-padding{
@@ -724,6 +745,9 @@ iframe.game-iframe{
 
 .chips{
     padding: 0.5rem 0.75rem;
+    a {
+        text-decoration: none;
+    }
 }
 
 .post-body{
@@ -739,9 +763,26 @@ iframe.game-iframe{
 }
 
 .blog-button{
-    position:absolute;
+    // position:absolute;
     width:50%;
     height:30px;
     top:100%;
     left:25%;
 }
+
+@keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .img-lazy {
+    opacity: 0;
+  }
+  .img-lazy--loading {
+    opacity: 1;
+    background: rgba(255,255,255, 0.8);
+  }
+  .img-lazy--loaded {
+    animation: 100ms fade-in forwards;
+  }

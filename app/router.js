@@ -15,8 +15,11 @@ Router.map(function() {
     this.route('blog', function(){
       this.route('post', {
         path: '/post/:post_id'
-      })
+      });
       this.route('archive');
+      this.route('tag', {
+        path:'/tag/:tag_name'
+      });
     });
     this.route('play', function() {
       this.route('web');
