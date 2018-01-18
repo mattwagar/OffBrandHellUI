@@ -11,10 +11,10 @@
 
         {{#each profiles as |profile|}}
             {{#grid.tile class=profile.color as |tile|}}
-            {{#paper-button id=profile.id class="profile-button" onClick=(action "openDialog" profile) raised=false}}
+            {{#paper-button id=profile.id class="profile-button-team" onClick=(action "openDialog" profile) raised=false}}
 
             {{/paper-button}}
-            <img src={{profile.pic}} class="fit-image">
+            <img src={{profile.pic}} class="fit-team">
             {{#tile.footer class="grid-tile-footer"}}
                 <div class="layout-row flex">
                     <div class="flex-initial icon-padding">{{paper-icon profile.icon class="white" size=36}}</div>
