@@ -332,6 +332,17 @@ body {
 .tpham_color{
     background: linear-gradient(135deg, #00b3b3 0%, rgba(67, 201, 34, 0.801) 100%);            
 }
+.flai_color{
+    background: linear-gradient(135deg, #005000 0%, rgba(54, 156, 108, 0.801) 100%);    
+}
+
+md-backdrop{
+    position:fixed;
+}
+
+md-dialog{
+    position:fixed;
+}
 
 /*******************/
 

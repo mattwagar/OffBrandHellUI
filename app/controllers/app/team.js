@@ -400,6 +400,29 @@ export default Ember.Controller.extend({
             aboutme:"I am a Junior at Drexel studying Computer Science with a Game Programming Concentration. In my free time, I enjoy playing games, reading, or long walks on the beach."
         }),
 
+        Ember.Object.create({
+            id: "flai",
+            pic: "assets/images/flai_profile_pic.png",
+            name: 'Felipe Lai',
+            role: 'Programmer',
+            color: 'flai_color',
+            icon: 'code',
+            currentyear:5,
+            years:[1,2,3,4,5],
+            maxyear: 5,
+            yearTitle:"Senior",
+            programSkill: 3,
+            artSkill: 1,
+            leadSkill:1,
+            comSkill: 2,
+            orgSkill: 2,
+            coffee:0,
+            skills:['Programming', 'C#', 'Unity'],
+            showDialog: false,
+            myrole:"Programming in unity",
+            aboutme:"Drexel computer science senior with a interest and concentration in game design"
+        }),
+
 
         
         
