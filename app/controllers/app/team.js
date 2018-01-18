@@ -56,7 +56,7 @@ export default Ember.Controller.extend({
             id: "mwagar",
             pic: "assets/images/mwagar_profile_pic.jpg",
             name: 'Matthew Wagar',
-            role: 'Level Designer / Web Developer',
+            role: 'Technical Director',
             color: 'mwagar-color',
             icon: 'extension',
             currentyear:4,

@@ -28,7 +28,7 @@
             {{/grid.tile}}
 
             {{#if profile.showDialog}}
-                {{#paper-dialog class="flex-xs-90 flex-gt-xs-25 no-overflow dialog-size" onClose=(action "closeDialog" profile) parent='#content' origin=(concat '#' profile.id) clickOutsideToClose=true}}
+                {{#paper-dialog class="flex-xs-90 flex-gt-xs-50 flex-gt-md-30 no-overflow dialog-size" onClose=(action "closeDialog" profile) parent='#content' origin=(concat '#' profile.id) clickOutsideToClose=true}}
                     {{#paper-toolbar class="profile-toolbar"}}
                         <div class="profile-background {{profile.color}}"></div>
                         {{#paper-toolbar-tools}}
