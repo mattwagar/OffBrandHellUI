@@ -433,6 +433,7 @@ export default Ember.Controller.extend({
     actions: {
         closeDialog(profile) {
             profile.set('showDialog', false);
+            this.set('selectedProfileTab', 'aboutme');
         },
         openDialog(profile){
             profile.set('showDialog', true);
