@@ -78,7 +78,7 @@ export default Ember.Controller.extend({
         
         Ember.Object.create({
             id: "sdreisbach",
-            pic: "assets/images/sdreisbach_profile_pic.jpg",
+            pic: "assets/images/sdreisbach_profile_pic.png",
             name: 'Sierra Dreisbach',
             role: 'Concept Artist',
             color: 'sdreisbach-color',
@@ -421,6 +421,28 @@ export default Ember.Controller.extend({
             showDialog: false,
             myrole:"Programming in unity",
             aboutme:"Drexel computer science senior with a interest and concentration in game design"
+        }),
+        Ember.Object.create({
+            id: "mnap",
+            pic: "assets/images/mnap_profile_pic.png",
+            name: 'Matthew Napolillo',
+            role: 'Level Designer',
+            color: 'mnap_color',
+            icon: 'videogame asset',
+            currentyear:4,
+            years:[1,2,3,4,5],
+            maxyear: 5,
+            yearTitle:"Junior",
+            programSkill: 2,
+            artSkill: 2,
+            leadSkill:2,
+            comSkill: 2,
+            orgSkill: 2,
+            coffee:3,
+            skills:['Programming', 'C#', 'Unity', 'Level Design', 'Adobe Suite', 'Maya'],
+            showDialog: false,
+            myrole:"I like to think I'm a jack of all trades, and I'd like to focus on getting my hands into Unity programming for this project. That being said, my primary for this group will be as a game designer.",
+            aboutme:"Really into a lot of stuff, especially games. Tends to wear sweaters, usually has a cup of coffee in hand. Can rely on to get/make too many references."
         }),
 
 

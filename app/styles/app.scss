@@ -236,7 +236,7 @@ body {
 
 .circular-square {
     width: 40%;
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 .no-overflow{
@@ -334,6 +334,10 @@ body {
 }
 .flai_color{
     background: linear-gradient(135deg, #005000 0%, rgba(54, 156, 108, 0.801) 100%);    
+}
+
+.mnap_color{
+    background: linear-gradient(135deg, #6FECE8, #7062C0 100%);        
 }
 
 md-backdrop{
