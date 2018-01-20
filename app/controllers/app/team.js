@@ -444,6 +444,28 @@ export default Ember.Controller.extend({
             myrole:"I like to think I'm a jack of all trades, and I'd like to focus on getting my hands into Unity programming for this project. That being said, my primary for this group will be as a game designer.",
             aboutme:"Really into a lot of stuff, especially games. Tends to wear sweaters, usually has a cup of coffee in hand. Can rely on to get/make too many references."
         }),
+        Ember.Object.create({
+            id: "udwi",
+            pic: "assets/images/udwi_profile_pic.jpg",
+            name: 'Utkarsh Dwivedi',
+            role: 'Programmer',
+            color: 'udwi_color',
+            icon: 'code',
+            currentyear:4,
+            years:[1,2,3,4,5],
+            maxyear: 5,
+            yearTitle:"Junior",
+            programSkill: 3,
+            artSkill: 2,
+            leadSkill:2,
+            comSkill: 2,
+            orgSkill: 2,
+            coffee:3,
+            skills:['Programming', 'C#', 'Unity'],
+            showDialog: false,
+            myrole:"I'm most comfortable when I'm programming for games.",
+            aboutme:"Hey, I'm Utkarsh. I'm from India, and I'm a Game Design and Production student at Drexel University with a minor in Computer Science. My main interest lies in programming for games and game systems, and ensuring that the player gets the best and the most enjoyable experience possible."
+        }),
 
 
         
