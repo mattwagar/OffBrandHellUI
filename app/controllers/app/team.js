@@ -356,7 +356,7 @@ export default Ember.Controller.extend({
 
         Ember.Object.create({
             id: "aedgarian",
-            pic: "assets/images/blog/blog_placeholder.png",
+            pic: "assets/images/aedgarian_profile_pic.jpg",
             name: 'Andre Edgarian',
             role: 'Artist',
             color: 'aedgarian_color',
