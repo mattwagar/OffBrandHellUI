@@ -92,6 +92,18 @@
     <div class="layout-row flex tab-height">
         <div class="flex-20 left-doc-tab">
             <div class="nav-section">
+
+                <div class="mid-nav-section">Winter Term 2018</div>
+                {{#paper-button class=(if (eq selectedScrum 'scrum4w') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum4w")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 4 Scrum</b>
+                {{/paper-button}}
+                {{#paper-button class=(if (eq selectedScrum 'scrum3w') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum3w")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Week 3 Scrum</b>
+                {{/paper-button}}
+                <div class="mid-nav-section">Fall Term 2017</div>
+
                 {{#paper-button class=(if (eq selectedScrum 'scrum10') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "scrum10")}}
                             {{!--{{paper-icon "home" size=48}}--}}
                             <b>Week 10 Scrum</b>
@@ -119,7 +131,11 @@
             </div>
         </div>  
         <div class="flex page-padding">       
-                {{#if (eq selectedScrum "scrum10")}}
+                {{#if (eq selectedScrum "scrum4w")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQshIZCx8sYjdHFsvjZ01SdZu06s5UjJv2xS4fnLC5FY71kseykRhW7s_3sI80Vxa9iyVdHM6KgQlo1/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1P6xRGwrZBFniSFqf-ixRQTLZLYuKi97GlqkR21UOoDY/edit?usp=sharing"}}
+                {{else if (eq selectedScrum "scrum3w")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQoT0H4hZKve9ACeMGJYbQdR0JTl6KhVC26gE3nyXPGnyJVGuLR6_yQ2sDr-N2N4TU4uUH65qYfSJ23/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/101kS1UP5SlmnThjB3Z638Vjr0HR_sDaXcIm7gg5_75M/edit?usp=sharing"}}
+                {{else if (eq selectedScrum "scrum10")}}
                     {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQP_fbe_w22I3I8f-gwR1c-5wfilrpr4csoOE6U5q3wXppjIoh2zwl2-A881G3ThgHz4yenpwN-d2wi/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1uU8YagR-zoT-EYtgJ7PG1OUmLkQCRD1AHBC6EiCAqvo/edit?usp=sharing"}}
                 {{else if (eq selectedScrum "scrum9")}}
                     {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vTphWjMtL1vcyry8kFS_QayoQadtNhlwBuKAOlKU8Rln-DS60q_yHfHFxdl1__QCeIDepOgpLNmlofi/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1ODjtaBFQTxMNgCVtP32udSYiZh7nzdb5y3wz8GgowDc/edit?usp=sharing"}}
