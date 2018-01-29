@@ -16,6 +16,10 @@
         <b>Asset List</b>
         {{/tabs.tab}}
 
+        {{#tabs.tab value="scrum"}}
+        <b>Scrum Presentations</b>
+        {{/tabs.tab}}
+
         {{#tabs.tab value="workflow"}}
         <b>Onboarding and Workflow</b>
         {{/tabs.tab}}
@@ -24,9 +28,7 @@
         <b>Sell Presenations</b>
         {{/tabs.tab}}
 
-        {{#tabs.tab value="scrum"}}
-        <b>Scrum Presentations</b>
-        {{/tabs.tab}}
+        
 {{/paper-tabs}}
 
 {{#liquid-if (eq selectedDoc "gdd") class="dynamic-animation doc-container" as |current|}}
@@ -39,7 +41,7 @@
     </div> 
 {{else if (eq selectedDoc "workflow")}}
     <div class="page-padding">
-    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/document/d/e/2PACX-1vRXCMLn3qlKSjZ9QkdN4li6s05gfn08_p9lDQZuYiZ6fN_AWZn9AAjlhnzGID21ESNiSwJ6lrKr0mV8/pub?embedded=true" link="https://docs.google.com/document/d/1lbQuBS-AkbV-Tsqqee6uTGfRAFUBrP9stT1AF5d-Hy4/edit?usp=sharing"}} 
+    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vTa-GQ1RCjDSdP0bm--Wi41nePYMkdaK1Dx3e9vYuQvPvTdE5PENeBATo1OTS-P-3leW_d09qaCdOsJ/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1Hy1vUm0GNfgvsVDVOJQ2ROC4c50wCK6JPlVERXiDLqM/edit?usp=sharing"}} 
     </div>
 {{else if (eq selectedDoc "sell")}}
     <div class="layout-row flex tab-height">
