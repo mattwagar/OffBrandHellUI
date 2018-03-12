@@ -5,7 +5,7 @@
     gutter="12px gt-sm-16px" as |grid|}}
     {{#paper-button raised=true mini=true primary=true href=(href-to "app.blog.archive")}}{{paper-icon "keyboard backspace"}}{{/paper-button}}
     <h1>{{post.title}}</h1>
-    <h4>Written By {{post.author.displayName}} | {{date post.published}}</h4>
+    <h4>Written By {{post.author.displayName}} | {{mmddyy post.published}}</h4>
     {{#if (gt post.labels.length 0)}}
         {{paper-divider}}
         <div class="flex archive-subtitle"> Tags </div>
