@@ -131,7 +131,7 @@ body {
 }
 
 .nav-section{
-    padding: 2vw 0vw;
+    overflow-y: auto;
 }
 
 .inline-block{
@@ -596,6 +596,12 @@ object{
     
 }
 
+.center-video{
+    padding-top: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
 /*****/
 
 /*documents route*/
@@ -670,7 +676,7 @@ iframe.game-iframe{
 /*Landing page*/
 
 .landing-logo{
-    padding-top: 0.5em;
+    padding-top: 0.25em;
     text-align: center;
     font-size: 3em;
     font-family: Colourbars;

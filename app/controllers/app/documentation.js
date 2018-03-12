@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     selectedDoc:"gdd",
 
-    selectedSell:"sell1",
-    selectedScrum:"scrum10",
+    selectedSell:"sell2w",
+    selectedScrum:"scrum10w",
 
     actions:{
         mutate(obj, key){
