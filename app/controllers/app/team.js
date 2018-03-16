@@ -30,28 +30,6 @@ export default Ember.Controller.extend({
             myrole:"I am the producer for REMembrance, I manage production timelines and organization. I am also in the modeling/animation department.",
             aboutme:"Well hello, I am Michael Moore. I'm currently a junior in the GDAP program and am in an accelerated degree program for my Master's in Digital Media. I was in Navy Special Forces for 10 years. On a more exciting note, I love long walks on the beach with the love of my life... Zeus (my english Bulldog). Oh I also love scotch. That is all. "
         }),
-        Ember.Object.create({
-            id: "sgargiulo",
-            pic: "assets/images/sgargiulo_profile_pic.jpg",
-            name: 'Sebastiano Gargiulo',
-            role: 'Technical Director',
-            color: 'sgargiulo-color',
-            icon: 'computer',
-            currentyear:3,
-            years:[1,2,3,4],
-            maxyear: 4,
-            yearTitle:"Junior",
-            programSkill: 1,
-            artSkill: 2,
-            leadSkill: 2,
-            comSkill: 2,
-            orgSkill: 3, 
-            coffee:0,
-            skills:['Organic Modeling', 'Rigging', 'Animation'],
-            showDialog: false,
-            myrole:"As Technical Director I establish how the development of the game progresses. I make sure the pipeline and tools are solid and ensure the development team is on the right track as efficiently as possible.",
-            aboutme:"Huge love for video games, VFX, and astronomy, with a keen eye for what works and doesn't work in games. Pretty knowledgeable in computer hardware & software too."
-        }),
             Ember.Object.create({
             id: "mwagar",
             pic: "assets/images/mwagar_profile_pic.jpg",
