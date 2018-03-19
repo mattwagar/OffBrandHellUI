@@ -40,6 +40,11 @@
         <div class="flex-20 left-doc-tab">
             <div>
                 <div class="mid-nav-section">Winter Term 2018</div>
+                {{#paper-button class=(if (eq selectedSell 'sell3w') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell2w")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>Final-Quarter Sell</b>
+                {{/paper-button}}
+
                 {{#paper-button class=(if (eq selectedSell 'sell2w') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedSell" "sell2w")}}
                             {{!--{{paper-icon "home" size=48}}--}}
                             <b>End-Quarter Sell</b>
@@ -93,6 +98,8 @@
                 {{else if (eq selectedSell "sell1w")}}
                     {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQOorIiKX-306yQBqoYTQuF2ipiF5C8jLHfn6tiL6gt-kEyy3YyjQhCoAiLm7KHxTzKW6-oRiuhgiBk/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1ui6J9qdjvpoq2TPdqicStskRFy-uKdPAf6yRgHorIa8/edit?usp=sharing"}}
                 {{else if (eq selectedSell "sell2w")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vT5AzQQpQ-r_FJFzlzB91SqBG1HJIpT0C9J0DkxurZbMwjFSByyDwKFtoKtpRetCYrU_e_vJ-4t_c5l/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1snIxktR3qdDs5cOSwDtjEoqg0jYJ-C_uWL3aFZTqCJY/edit?usp=sharing"}}
+                {{else if (eq selectedSell "sell3w")}}
                     {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vT5AzQQpQ-r_FJFzlzB91SqBG1HJIpT0C9J0DkxurZbMwjFSByyDwKFtoKtpRetCYrU_e_vJ-4t_c5l/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/1snIxktR3qdDs5cOSwDtjEoqg0jYJ-C_uWL3aFZTqCJY/edit?usp=sharing"}}
                 {{/if}}
         </div>
