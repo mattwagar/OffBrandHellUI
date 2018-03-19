@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     selectedDoc:"gdd",
 
-    selectedSell:"sell2w",
+    selectedSell:"sell3w",
     selectedScrum:"scrum10w",
 
     actions:{
