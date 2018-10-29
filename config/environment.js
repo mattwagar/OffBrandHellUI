@@ -3,7 +3,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'ember-quickstart',
+    modulePrefix: 'SpicyDragonsWebsite',
     environment,
     rootURL: '/',
     locationType: 'hash',
@@ -54,6 +54,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.locationType = 'hash';
+    ENV.rootURL = '/ember-quickstart/';
 
     ENV.locationType = 'hash';
 

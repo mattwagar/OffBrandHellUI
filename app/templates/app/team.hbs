@@ -54,20 +54,6 @@
                         
                         {{/paper-toolbar-tools}}
                     {{/paper-toolbar}}
-                    {{#paper-tabs primary=true
-                            borderBottom=true
-                            stretch=true
-                            selected=selectedProfileTab
-                            onChange=(action (mut selectedProfileTab)) as |tabs|}}
-                                {{#tabs.tab value="aboutme"}}
-                                About Me
-                                {{/tabs.tab}}
-
-                                {{#tabs.tab value="stats"}}
-                                Stats
-                                {{/tabs.tab}}
-                            
-                            {{/paper-tabs}}
                             {{#paper-dialog-content class="no-padding"}}
                             <div id="liquid-profile">
                             {{#liquid-if (eq selectedProfileTab "aboutme") class="page-padding dynamic-animation" as |current|}}
@@ -75,25 +61,6 @@
                                     {{profile.myrole}}
                                 <h3 class="lessmargin">About Me</h3>
                                     {{profile.aboutme}}
-                            {{else}}
-                                {{year-graph currentyear=profile.currentyear years=profile.years maxyear=profile.maxyear yearTitle=profile.yearTitle}}
-                                <div class="layout-row layout-wrap graphs">
-                                    <div class="flex-10">
-                                        {{coffee-slider step=profile.coffee min=0 max=4}}    
-                                    </div> 
-                                    <div class="flex-90">
-                                        {{pentagon-graph programSkill=profile.programSkill artSkill=profile.artSkill leadSkill=profile.leadSkill comSkill=profile.comSkill orgSkill=profile.orgSkill }}
-                                    </div>
-                                    <div class="flex-100">
-                                        {{!--<div class="title">Skills:</div>--}}
-                                        <h3 class="lessmargin">Skills:</h3>
-                                        
-                                        {{paper-chips
-                                        addItem=(action "setTab")
-                                        content=profile.skills
-                                        readOnly=false}}
-                                    </div>
-                                </div>
                             {{/liquid-if}}
                             </div>
                             {{/paper-dialog-content}}

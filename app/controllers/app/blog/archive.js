@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
             let self = this;
             let allPosts = this.get('allPosts');
             let token = this.get('nextPageToken');
-            Ember.$.get(`https://www.googleapis.com/blogger/v3/blogs/1010553031835188559/posts?maxResults=10&key=AIzaSyAlS7uOny5TTTmpMla3QNRU8Hy0KLEZqSg&pageToken=${token}`, function (response) {
+            Ember.$.get(`https://www.googleapis.com/blogger/v3/blogs/1441926061414130557/posts?maxResults=10&key=AIzaSyDQdja3gFxx5twAFkbsrDmHPFVb5TZLlUs&pageToken=${token}`, function (response) {
                 if (response.items) {
                     self.set('allPosts', allPosts.concat(response.items));
                     self.set('nextPageToken', response.nextPageToken);
